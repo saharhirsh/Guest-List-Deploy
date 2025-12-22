@@ -126,13 +126,13 @@ resource "aws_eks_node_group" "main" {
   subnet_ids      = aws_subnet.private[*].id
 
   capacity_type  = "ON_DEMAND"
-  instance_types = [var.node_instance_type]
+instance_types = ["t3.micro"]
 
-  scaling_config {
-    desired_size = var.node_desired_capacity
-    max_size     = var.node_max_capacity
-    min_size     = var.node_min_capacity
-  }
+scaling_config {
+  desired_size = 1
+  max_size     = 1
+  min_size     = 1
+}
 
   update_config { max_unavailable = 1 }
   ami_type = "AL2_x86_64"
