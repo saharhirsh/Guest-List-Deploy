@@ -97,7 +97,7 @@ resource "aws_iam_role_policy_attachment" "nodes_AmazonEC2ContainerRegistryReadO
 resource "aws_eks_cluster" "main" {
   name     = var.cluster_name
   role_arn = local.cluster_role_arn
-  version  = "1.28"
+  version  = "1.31"
 
   vpc_config {
     subnet_ids              = concat(aws_subnet.private[*].id, aws_subnet.public[*].id)
