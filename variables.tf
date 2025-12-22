@@ -51,7 +51,7 @@ variable "node_min_capacity" {
 variable "app_image" {
   description = "Docker image for the guest list application"
   type        = string
-  default     = "giligalili/guestlistapi:ver04"
+  default     = "saharhirsh/guestlistapi:ver01"
 }
 
 variable "app_replicas" {
