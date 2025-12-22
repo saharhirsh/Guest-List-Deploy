@@ -63,11 +63,12 @@ env:
   AWS_DEFAULT_REGION: us-east-1
 
   ENVIRONMENT: ${{ github.ref_name }}
-  TF_STATE_BUCKET: guestlist-tfstate-${{ github.ref_name }}
-  TF_LOCK_TABLE: terraform-locks
+  TF_STATE_BUCKET: guestlist-tfstate-saharhirsh
+  TF_LOCK_TABLE: terraform-locks-saharhirsh
 
   CLUSTER_ROLE_NAME: guestlist-cluster-cluster-role
   NODE_ROLE_NAME: guestlist-cluster-node-group-role
+
 
 jobs:
   determine-environment:
