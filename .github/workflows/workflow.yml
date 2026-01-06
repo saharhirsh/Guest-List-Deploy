@@ -311,13 +311,13 @@ jobs:
           echo "State bucket: ${{ env.TF_STATE_BUCKET }}"
           echo "Lock table: ${{ env.TF_LOCK_TABLE }}"
 
-      - name: Terraform Init (S3 backend from code)
+      - name: Terraform Init (S3 backend)
         working-directory: ${{ steps.find-dir.outputs.dir }}
         run: |
           terraform init -input=false -reconfigure \
-            -backend-config="bucket=${TF_STATE_BUCKET}" \
-            -backend-config="key=envs/${ENVIRONMENT}/terraform.tfstate" \
-            -backend-config="region=${AWS_REGION:-us-east-1}"
+          -backend-config="bucket=${TF_STATE_BUCKET}" \
+          -backend-config="key=envs/${ENVIRONMENT}/terraform.tfstate" \
+          -backend-config="region=us-east-1"
 
       - name: Select/Create workspace
         working-directory: ${{ steps.find-dir.outputs.dir }}
